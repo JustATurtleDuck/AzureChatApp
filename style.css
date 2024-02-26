@@ -95,8 +95,8 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical; 
-  max-height: 70px;
-  min-height: 70px;
+  max-height: 40px;
+  min-height: 40px;
   background-color: #ccc;
 }
 
