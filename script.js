@@ -83,6 +83,28 @@ function sendMessage() {
   }
 }
 
+  const typingIndicator = document.getElementById('typing-indicator');
+  let typingTimeout;
+
+  messageInput.addEventListener('keydown', () => {
+    socket.emit('typing', { user: 'User Name' });
+    clearTimeout(typingTimeout);
+  });
+
+  messageInput.addEventListener('keyup', () => {
+    typingTimeout = setTimeout(() => {
+      socket.emit('stop typing', { user: 'User Name' });
+    }, 2000);
+  });
+
+  socket.on('typing', (data) => {
+    typingIndicator.style.display = 'block';
+  });
+
+  socket.on('stop typing', (data) => {
+    typingIndicator.style.display = 'none';
+  });
+
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
   messageForm.classList.toggle('dark-mode');
