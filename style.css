@@ -77,7 +77,7 @@ body {
 
 #typing-indicator {
   position: absolute;
-  bottom: 100px; /* Adjust this value to position the typing indicator correctly */
+  bottom: 80px; /* Adjust this value to position the typing indicator correctly */
   left: 0;
   width: 100%;
   text-align: center;
