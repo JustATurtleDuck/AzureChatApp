@@ -55,11 +55,11 @@ body {
   font-size: 18px; /* Adjust the font size as needed */
 }
 
-#typing-indicator {
+/* #typing-indicator {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-}
+} */
 
 #message-container {
   height: calc(100vh - 190px);
