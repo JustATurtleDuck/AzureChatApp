@@ -22,7 +22,9 @@ body {
 
 #menu-bar-text {
   font-size: 18px; 
-  position: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .message {
