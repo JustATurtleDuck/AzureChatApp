@@ -9,8 +9,6 @@
   <script defer src="https://webchat-1.azurewebsites.net/socket.io/socket.io.js"></script>
   <script defer src="script.js"></script>
 
-  <div id="typing-indicator" style="display: none;">Someone is typing...</div>
-
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo+Play:wght@700&display=swap');
   </style>
@@ -27,6 +25,7 @@
 
   </div>
 
+  <div id="typing-indicator" style="display: none;">Someone is typing...</div>
   <form id="send-window">
     <textarea name="text" id="message-input" placeholder="Type your message..."></textarea>
     <button type="submit" id="send-button">Send</button>
