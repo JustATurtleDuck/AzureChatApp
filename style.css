@@ -75,6 +75,15 @@ body {
   border-radius: 4px;
 }
 
+#typing-indicator {
+  position: absolute;
+  bottom: 50px; /* Adjust this value to position the typing indicator correctly */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
 #send-window {
   position: fixed;
   bottom: 0;
