@@ -4,7 +4,6 @@ const messageInput = document.getElementById('message-input');
 const messageContainer = document.getElementById('message-container');
 const darkModeToggle = document.querySelector('.dark-mode-toggle');
 const userNameElement = document.getElementById('user-name');
-const storageKey = 'theme-preference'
 
 let userName = prompt('What is your name?');
 if (!userName) userName = "Anonymous";
@@ -110,62 +109,12 @@ socket.on('stop typing', (data) => {
   typingIndicator.style.display = 'none';
 });
 
-
-
-
-const onClick = () => {
-  // flip current value
-  theme.value = theme.value === 'light'
-    ? 'dark'
-    : 'light'
-
-  setPreference()
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  messageForm.classList.toggle('dark-mode');
+  messageInput.classList.toggle('dark-mode-input');
+  messageContainer.classList.toggle('dark-mode');
+  messageContainer.scrollTop = messageContainer.scrollHeight;
+  const menuBar = document.getElementById('menu-bar');
+  menuBar.classList.toggle('dark-mode');
 }
-
-const getColorPreference = () => {
-  if (localStorage.getItem(storageKey))
-    return localStorage.getItem(storageKey)
-  else
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light'
-}
-
-const setPreference = () => {
-  localStorage.setItem(storageKey, theme.value)
-  reflectPreference()
-}
-
-const reflectPreference = () => {
-  document.firstElementChild
-    .setAttribute('data-theme', theme.value)
-
-  document
-    .querySelector('.dark-mode-toggle')
-    ?.setAttribute('aria-label', theme.value)
-}
-
-const theme = {
-  value: getColorPreference(),
-}
-
-// set early so no page flashes / CSS is made aware
-reflectPreference()
-
-window.onload = () => {
-  // set on load so screen readers can see latest value on the button
-  reflectPreference()
-
-  // now this script can find and listen for clicks on the control
-  document
-    .querySelector('.dark-mode-toggle')
-    .addEventListener('click', onClick)
-}
-
-// sync with system changes
-window
-  .matchMedia('(prefers-color-scheme: dark)')
-  .addEventListener('change', ({matches:isDark}) => {
-    theme.value = isDark ? 'dark' : 'light'
-    setPreference()
-  })
