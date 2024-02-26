@@ -118,3 +118,10 @@ function toggleDarkMode() {
   const menuBar = document.getElementById('menu-bar');
   menuBar.classList.toggle('dark-mode');
 }
+
+window
+  .matchMedia('(prefers-color-scheme: dark)')
+  .addEventListener('change', ({matches:isDark}) => {
+    theme.value = isDark ? 'dark' : 'light'
+    setPreference()
+  })
