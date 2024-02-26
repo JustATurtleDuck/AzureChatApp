@@ -102,7 +102,7 @@ messageInput.addEventListener('keyup', () => {
 
 socket.on('typing', (data) => {
   typingIndicator.style.display = 'block';
-  typingIndicator.innerText = `${data.user} is typing...`; // Display the user's name who is typing
+  typingIndicator.innerText = `${userNameElement} is typing...`; // Display the user's name who is typing
 });
 
 socket.on('stop typing', (data) => {
