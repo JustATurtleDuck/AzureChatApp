@@ -29,11 +29,19 @@ io.on('connection', socket => {
     console.log(`Message emitted to all clients except the sender`);
   });
   
-
   socket.on('disconnect', () => {
     io.emit('user-disconnected', users[socket.id]);
     delete users[socket.id];
   });
+
+  socket.on('typing', (data) => {
+    socket.broadcast.emit('typing', data);
+  });
+
+  socket.on('stop typing', (data) => {
+    socket.broadcast.emit('stop typing', data);
+  });
+  
 });
 
 const PORT = process.env.PORT || 3000;
