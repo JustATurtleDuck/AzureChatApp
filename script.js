@@ -110,6 +110,9 @@ socket.on('stop typing', (data) => {
   typingIndicator.style.display = 'none';
 });
 
+
+
+
 const onClick = () => {
   // flip current value
   theme.value = theme.value === 'light'
