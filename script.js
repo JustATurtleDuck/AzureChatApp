@@ -138,7 +138,7 @@ const reflectPreference = () => {
     .setAttribute('data-theme', theme.value)
 
   document
-    .querySelector('#dark-mode-toggle')
+    .querySelector('.dark-mode-toggle')
     ?.setAttribute('aria-label', theme.value)
 }
 
@@ -155,7 +155,7 @@ window.onload = () => {
 
   // now this script can find and listen for clicks on the control
   document
-    .querySelector('#dark-mode-toggle')
+    .querySelector('.dark-mode-toggle')
     .addEventListener('click', onClick)
 }
 
