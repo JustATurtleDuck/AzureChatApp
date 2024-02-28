@@ -99,7 +99,7 @@ body {
 }
 
 #message-input {
-  font-family: "Cairo Play", sans-serif;
+  font-family: sans-serif, "Cairo Play";
   flex: 1;
   padding: 8px;
   margin-right: 5px; /* Added margin to the right of the input */
