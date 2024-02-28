@@ -35,7 +35,7 @@ body {
 }
 
 .message.sent {
-  background-color: #814caf; /* Green for sent messages */
+  background-color: #000000; /* Green for sent messages */
   color: #fff;
 }
 
